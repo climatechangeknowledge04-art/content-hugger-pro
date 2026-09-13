@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import stadiumAsset from "@/assets/hpca-stadium.png.asset.json";
 import peakAsset from "@/assets/dhauladhar-peak.jpg.asset.json";
 import valleyAsset from "@/assets/dharamshala-valley.jpg.asset.json";
-import townAsset from "@/assets/dharamshala-town.jpg.asset.json";
 import school from "@/assets/nb-school.jpg";
 import market from "@/assets/nb-market.jpg";
 import hospitalAsset from "@/assets/zonal-hospital-dharamshala.png.asset.json";
