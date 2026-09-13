@@ -5,19 +5,19 @@ import filmForestWalk from "@/assets/film-forest-walk.mp4.asset.json";
 import filmTriundTrek from "@/assets/film-triund-trek.mp4.asset.json";
 import filmRidgeClimb from "@/assets/film-ridge-climb.mp4.asset.json";
 import filmRidge360 from "@/assets/film-ridge-360.mp4.asset.json";
-import filmMountainSummit from "@/assets/film-mountain-summit.mp4.asset.json";
+import filmMountainSummit from "@/assets/film-dhauladhar-upload.webm.asset.json";
 import filmMarketWalk from "@/assets/film-market-walk.mp4.asset.json";
 import filmHimalayanFood from "@/assets/film-himalayan-food.mp4.asset.json";
-import filmKangraValley from "@/assets/film-kangra-valley.mp4.asset.json";
+import filmKangraValley from "@/assets/film-tea-gardens-upload.webm.asset.json";
 import filmTerraceView from "@/assets/film-terrace-view.mp4.asset.json";
 import posterForestWalk from "@/assets/poster-film-forest-walk.jpg.asset.json";
 import posterTriundTrek from "@/assets/poster-film-triund-trek.jpg.asset.json";
 import posterRidgeClimb from "@/assets/poster-film-ridge-climb.jpg.asset.json";
 import posterRidge360 from "@/assets/poster-film-ridge-360.jpg.asset.json";
-import posterMountainSummit from "@/assets/poster-film-mountain-summit.jpg.asset.json";
+import posterMountainSummit from "@/assets/poster-dhauladhar-upload.jpg.asset.json";
 import posterMarketWalk from "@/assets/poster-film-market-walk.jpg.asset.json";
 import posterHimalayanFood from "@/assets/poster-film-himalayan-food.jpg.asset.json";
-import posterKangraValley from "@/assets/poster-film-kangra-valley.jpg.asset.json";
+import posterKangraValley from "@/assets/poster-tea-gardens-upload.jpg.asset.json";
 import posterTerraceView from "@/assets/poster-film-terrace-view.jpg.asset.json";
 
 const FILMS = [

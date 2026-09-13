@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Mountain } from "lucide-react";
-import dhauladharAsset from "@/assets/dhauladhar-dusk.jpg.asset.json";
+import dhauladharAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 
 const dhauladhars = dhauladharAsset.url;
 
