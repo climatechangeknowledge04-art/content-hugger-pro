@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "df83fdc4-af81-4d0f-b18d-d1c14dd46281",
+  "asset_id": "29af8ab1-9363-4e17-ac32-2d9a6aa79a03",
   "project_id": "d5261a47-2705-4aeb-939e-336529d5fb8c",
-  "url": "/__l5e/assets-v1/df83fdc4-af81-4d0f-b18d-d1c14dd46281/film-ridge-climb.mp4",
-  "r2_key": "a/v1/d5261a47-2705-4aeb-939e-336529d5fb8c/df83fdc4-af81-4d0f-b18d-d1c14dd46281/film-ridge-climb.mp4",
-  "original_filename": "film-ridge-climb.mp4",
-  "size": 17086127,
-  "content_type": "video/mp4",
-  "created_at": "2026-09-13T08:33:45Z"
+  "url": "/__l5e/assets-v1/29af8ab1-9363-4e17-ac32-2d9a6aa79a03/film-ridge-climb.webm",
+  "r2_key": "a/v1/d5261a47-2705-4aeb-939e-336529d5fb8c/29af8ab1-9363-4e17-ac32-2d9a6aa79a03/film-ridge-climb.webm",
+  "original_filename": "film-ridge-climb.webm",
+  "size": 7189503,
+  "content_type": "video/webm",
+  "created_at": "2026-09-13T08:37:44Z"
 }

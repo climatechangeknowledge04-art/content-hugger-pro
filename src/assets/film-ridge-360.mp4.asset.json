@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "8568a04c-385f-42b6-9958-d92462259302",
+  "asset_id": "06c68565-f73e-4e3c-944b-350f985fa39f",
   "project_id": "d5261a47-2705-4aeb-939e-336529d5fb8c",
-  "url": "/__l5e/assets-v1/8568a04c-385f-42b6-9958-d92462259302/film-mountain-summit.mp4",
-  "r2_key": "a/v1/d5261a47-2705-4aeb-939e-336529d5fb8c/8568a04c-385f-42b6-9958-d92462259302/film-mountain-summit.mp4",
-  "original_filename": "film-mountain-summit.mp4",
-  "size": 12610828,
-  "content_type": "video/mp4",
-  "created_at": "2026-09-13T08:33:20Z"
+  "url": "/__l5e/assets-v1/06c68565-f73e-4e3c-944b-350f985fa39f/film-mountain-summit.webm",
+  "r2_key": "a/v1/d5261a47-2705-4aeb-939e-336529d5fb8c/06c68565-f73e-4e3c-944b-350f985fa39f/film-mountain-summit.webm",
+  "original_filename": "film-mountain-summit.webm",
+  "size": 5179187,
+  "content_type": "video/webm",
+  "created_at": "2026-09-13T08:37:21Z"
 }
