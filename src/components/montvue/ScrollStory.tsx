@@ -10,10 +10,10 @@ import {
 } from "motion/react";
 import dhauladharAsset from "@/assets/dhauladhar-range.jpg.asset.json";
 import valleyAsset from "@/assets/dharamshala-valley.jpg.asset.json";
-import viewpointAsset from "@/assets/himalaya-dusk.jpg.asset.json";
+import viewpointAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 import school from "@/assets/nb-school.jpg";
 import stadium from "@/assets/story-stadium.jpg";
-import residenceAsset from "@/assets/dhauladhar-dusk.jpg.asset.json";
+import residenceAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 
 const dhauladhars = dhauladharAsset.url;
 const valley = valleyAsset.url;

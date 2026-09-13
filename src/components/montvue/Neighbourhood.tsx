@@ -6,6 +6,7 @@ import valleyAsset from "@/assets/dharamshala-valley.jpg.asset.json";
 import townAsset from "@/assets/dharamshala-town.jpg.asset.json";
 import school from "@/assets/nb-school.jpg";
 import market from "@/assets/nb-market.jpg";
+import hospitalAsset from "@/assets/zonal-hospital-dharamshala.png.asset.json";
 
 const PLACES = [
   {
@@ -50,11 +51,11 @@ const PLACES = [
   },
   {
     key: "town",
-    src: townAsset.url,
-    label: "Town & Hospital",
+    src: hospitalAsset.url,
+    label: "Zonal Hospital",
     dist: "~12 min",
-    note: "Zonal hospital, banks and civic amenities in town.",
-    alt: "Dharamshala town seen from above",
+    note: "Dharamshala's government zonal hospital and emergency care.",
+    alt: "Zonal Hospital Dharamshala building and emergency entrance",
   },
 ] as const;
 

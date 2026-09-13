@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import exteriorAsset from "@/assets/himalaya-dusk.jpg.asset.json";
+import exteriorAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 import living from "@/assets/interior-living.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
