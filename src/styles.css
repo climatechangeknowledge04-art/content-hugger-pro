@@ -5,18 +5,42 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Mont Vue Residences — quiet luxury design system.
+ * Palette: dark charcoal #1A1A1A, warm off-white #F5F1E8, brass #B08D57.
+ * Type: Cormorant Garamond (display) + Manrope (body).
  */
+
+@theme {
+  /* Literal palette */
+  --color-charcoal: oklch(0.218 0 89.9); /* #1A1A1A */
+  --color-charcoal-deep: oklch(0.178 0 89.9); /* #111111 */
+  --color-charcoal-soft: oklch(0.26 0.004 106.7); /* #242422 */
+  --color-sand: oklch(0.959 0.013 86.8); /* #F5F1E8 */
+  --color-sand-dim: oklch(0.913 0.025 89.2); /* #E9E2D0 */
+  --color-brass: oklch(0.664 0.083 77.4); /* #B08D57 */
+  --color-brass-light: oklch(0.748 0.087 81.7); /* #C9A86C */
+  --color-brass-deep: oklch(0.553 0.07 76.3); /* #8A6D42 */
+  --color-stone: oklch(0.689 0.028 84.6); /* #A39A88 */
+
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-lift: 0 24px 60px -24px oklch(0 0 0 / 0.55);
+  --shadow-brass: 0 18px 50px -18px oklch(0.664 0.083 77.4 / 0.45);
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -62,74 +86,39 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --radius: 0.125rem;
+  --background: oklch(0.218 0 89.9);
+  --foreground: oklch(0.959 0.013 86.8);
+  --card: oklch(0.26 0.004 106.7);
+  --card-foreground: oklch(0.959 0.013 86.8);
+  --popover: oklch(0.26 0.004 106.7);
+  --popover-foreground: oklch(0.959 0.013 86.8);
+  --primary: oklch(0.664 0.083 77.4);
+  --primary-foreground: oklch(0.178 0 89.9);
+  --secondary: oklch(0.26 0.004 106.7);
+  --secondary-foreground: oklch(0.959 0.013 86.8);
+  --muted: oklch(0.26 0.004 106.7);
+  --muted-foreground: oklch(0.689 0.028 84.6);
+  --accent: oklch(0.664 0.083 77.4);
+  --accent-foreground: oklch(0.178 0 89.9);
+  --destructive: oklch(0.577 0.215 27.325);
+  --destructive-foreground: oklch(0.959 0.013 86.8);
+  --border: oklch(0.959 0.013 86.8 / 12%);
+  --input: oklch(0.959 0.013 86.8 / 16%);
+  --ring: oklch(0.664 0.083 77.4);
+  --chart-1: oklch(0.664 0.083 77.4);
+  --chart-2: oklch(0.748 0.087 81.7);
+  --chart-3: oklch(0.553 0.07 76.3);
+  --chart-4: oklch(0.689 0.028 84.6);
+  --chart-5: oklch(0.913 0.025 89.2);
+  --sidebar: oklch(0.178 0 89.9);
+  --sidebar-foreground: oklch(0.959 0.013 86.8);
+  --sidebar-primary: oklch(0.664 0.083 77.4);
+  --sidebar-primary-foreground: oklch(0.178 0 89.9);
+  --sidebar-accent: oklch(0.26 0.004 106.7);
+  --sidebar-accent-foreground: oklch(0.959 0.013 86.8);
+  --sidebar-border: oklch(0.959 0.013 86.8 / 12%);
+  --sidebar-ring: oklch(0.664 0.083 77.4);
 }
 
 @layer base {
@@ -137,8 +126,169 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
+
+  ::selection {
+    background-color: var(--color-brass);
+    color: var(--color-charcoal-deep);
+  }
+}
+
+/* ---------- Mont Vue bespoke primitives ---------- */
+
+/* Eyebrow label with brass rule */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+/* Frosted glass chip used for the hero badge + floor labels */
+@utility glass-chip {
+  background: oklch(0.178 0 89.9 / 62%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid oklch(0.959 0.013 86.8 / 16%);
+  box-shadow: 0 18px 50px -18px oklch(0 0 0 / 0.6);
+}
+
+/* Hairline divider */
+@utility hairline {
+  border-color: oklch(0.959 0.013 86.8 / 12%);
+}
+
+/* ---------- 3D floor explorer: architectural maquette ---------- */
+
+.mv-scene {
+  perspective: 1600px;
+  perspective-origin: 50% 42%;
+}
+
+.mv-building {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.mv-floor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+}
+
+.mv-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: visible;
+}
+
+/* Bone-coloured model faces with brass trim and window banding */
+.mv-face-top {
+  background:
+    linear-gradient(135deg, oklch(0.97 0.012 88) 0%, oklch(0.9 0.026 89) 100%);
+  border: 1px solid oklch(0.664 0.083 77.4 / 65%);
+  box-shadow: inset 0 0 0 6px oklch(0.959 0.013 86.8 / 35%);
+}
+
+.mv-face-front {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.218 0 89.9 / 78%) 0 30px,
+      transparent 30px 52px
+    ),
+    linear-gradient(180deg, oklch(0.94 0.018 88) 0%, oklch(0.85 0.03 89) 100%);
+  background-size:
+    100% 46%,
+    100% 100%;
+  background-position:
+    center 58%,
+    center;
+  background-repeat: no-repeat;
+  border: 1px solid oklch(0.664 0.083 77.4 / 45%);
+}
+
+.mv-face-side {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.218 0 89.9 / 72%) 0 24px,
+      transparent 24px 44px
+    ),
+    linear-gradient(180deg, oklch(0.88 0.026 89) 0%, oklch(0.78 0.032 89) 100%);
+  background-size:
+    100% 46%,
+    100% 100%;
+  background-position:
+    center 58%,
+    center;
+  background-repeat: no-repeat;
+  border: 1px solid oklch(0.664 0.083 77.4 / 38%);
+}
+
+/* Soft contact shadow under the maquette */
+.mv-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 560px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    oklch(0 0 0 / 55%) 0%,
+    transparent 68%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* ---------- Glass annotation system (3D scene + overlays) ---------- */
+
+@utility glass-panel {
+  background: oklch(0.178 0 89.9 / 46%);
+  backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid oklch(0.959 0.013 86.8 / 14%);
+  border-radius: 2px;
+  box-shadow:
+    0 22px 60px -22px oklch(0 0 0 / 0.7),
+    inset 0 1px 0 0 oklch(0.959 0.013 86.8 / 10%);
+}
+
+/* Brass anchor dot pinned to the model */
+@utility mv-anchor {
+  display: block;
+  width: 7px;
+  height: 7px;
+  flex: none;
+  transform: rotate(45deg);
+  background: var(--color-brass-light);
+  box-shadow: 0 0 12px 2px oklch(0.748 0.087 81.7 / 0.55);
+}
+
+/* Leader line from anchor to glass panel */
+@utility mv-leader {
+  display: block;
+  height: 1px;
+  flex: none;
+  background: linear-gradient(
+    90deg,
+    var(--color-brass-light),
+    oklch(0.748 0.087 81.7 / 0.25)
+  );
 }
