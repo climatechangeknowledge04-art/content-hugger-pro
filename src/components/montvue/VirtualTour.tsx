@@ -1,5 +1,5 @@
 import { Play } from "lucide-react";
-import walkthrough from "@/assets/mont-vue-home-walkthrough.mp4.asset.json";
+import walkthrough from "@/assets/mont-vue-home-walkthrough.webm.asset.json";
 import poster from "@/assets/mont-vue-home-walkthrough-poster.jpg.asset.json";
 
 export function VirtualTour() {
