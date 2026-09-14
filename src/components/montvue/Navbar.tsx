@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from "lucide-react";
-import { openWhatsApp, waLink } from "@/lib/whatsapp";
+import { waLink } from "@/lib/whatsapp";
 
 export function Navbar() {
   return (
@@ -26,10 +26,6 @@ export function Navbar() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(event) => {
-              event.preventDefault();
-              openWhatsApp();
-            }}
             className="hidden items-center gap-2 text-xs font-medium tracking-[0.18em] text-sand/80 transition-colors hover:text-brass-light sm:flex"
           >
             <MessageCircle className="h-3.5 w-3.5 text-brass" strokeWidth={1.5} />

@@ -1,4 +1,4 @@
-import { openWhatsApp, waLink } from "@/lib/whatsapp";
+import { waLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
@@ -25,10 +25,6 @@ export function Footer() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(event) => {
-                event.preventDefault();
-                openWhatsApp();
-              }}
               className="mt-2 ml-4 inline-block text-brass-light transition-colors hover:text-sand"
             >
               WhatsApp us

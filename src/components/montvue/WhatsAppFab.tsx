@@ -1,4 +1,4 @@
-import { openWhatsApp, waLink } from "@/lib/whatsapp";
+import { waLink } from "@/lib/whatsapp";
 
 /** Always-visible WhatsApp enquiry button. */
 export function WhatsAppFab() {
@@ -7,10 +7,6 @@ export function WhatsAppFab() {
       href={waLink()}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={(event) => {
-        event.preventDefault();
-        openWhatsApp();
-      }}
       aria-label="Enquire on WhatsApp"
       className="fixed right-5 bottom-5 z-[60] flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 shadow-lift transition-transform duration-300 hover:scale-105 sm:right-8 sm:bottom-8"
     >
