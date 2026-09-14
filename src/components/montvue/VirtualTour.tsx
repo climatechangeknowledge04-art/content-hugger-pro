@@ -1,6 +1,6 @@
 import { Play } from "lucide-react";
-import walkthrough from "@/assets/full-home-walkthrough.mp4.asset.json";
-import poster from "@/assets/full-home-walkthrough-poster.jpg.asset.json";
+import walkthrough from "@/assets/mont-vue-home-walkthrough.mp4.asset.json";
+import poster from "@/assets/mont-vue-home-walkthrough-poster.jpg.asset.json";
 
 export function VirtualTour() {
   return (
@@ -50,7 +50,7 @@ export function VirtualTour() {
           <figcaption className="pointer-events-none absolute right-5 bottom-16 left-5 flex items-end justify-between gap-4 sm:right-8 sm:bottom-20 sm:left-8">
             <div>
               <p className="flex items-center gap-2 text-[0.6rem] font-bold tracking-[0.3em] text-brass-light uppercase">
-                <Play className="h-3.5 w-3.5 fill-current" /> 10-second preview
+                <Play className="h-3.5 w-3.5 fill-current" /> Full home walkthrough
               </p>
               <p className="mt-2 font-display text-2xl font-medium text-sand sm:text-4xl">
                 Front Gate to Mountain Balcony
