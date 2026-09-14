@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 import { Phone, Check, Loader2, MessageCircle } from "lucide-react";
-import { openWhatsApp, waLink } from "@/lib/whatsapp";
+import { waLink } from "@/lib/whatsapp";
 
 /*
  * WORDPRESS INTEGRATION POINT
@@ -82,10 +82,6 @@ export function ContactForm() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(event) => {
-              event.preventDefault();
-              openWhatsApp();
-            }}
             className="group mt-4 ml-0 inline-flex items-center gap-4 border border-[#25D366]/60 px-6 py-4 transition-all duration-300 hover:bg-[#25D366] sm:mt-10 sm:ml-4"
           >
             <MessageCircle
@@ -236,12 +232,6 @@ export function ContactForm() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(event) => {
-                  event.preventDefault();
-                  openWhatsApp(
-                    `Hi, I'm ${name || "…"} (${phone || "phone"}). I'm interested in Mont Vue Residences — ${floor}. Please share details.`,
-                  );
-                }}
                 className="flex items-center justify-center gap-3 border border-[#25D366]/60 px-8 py-4 text-[0.65rem] font-bold tracking-[0.35em] text-sand uppercase transition-all duration-300 hover:bg-[#25D366] hover:text-charcoal-deep"
               >
                 <MessageCircle className="h-4 w-4" strokeWidth={1.5} />

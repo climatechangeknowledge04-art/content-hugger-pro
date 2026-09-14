@@ -4,9 +4,8 @@ import siteMap from "@/assets/site-map.jpg.asset.json";
 
 const LAT = 32.196217;
 const LNG = 76.334618;
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${LAT},${LNG}`;
-const DIRECTIONS_LINK = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
-const EMBED = `https://www.google.com/maps?q=${LAT},${LNG}&z=16&output=embed`;
+const MAPS_LINK = `https://www.google.com/maps/search/${LAT},${LNG}`;
+const DIRECTIONS_LINK = `https://www.google.com/maps/dir//${LAT},${LNG}`;
 
 export function LocationMap() {
   return (
@@ -44,22 +43,24 @@ export function LocationMap() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-sand/10 sm:aspect-[16/10]">
+          <a
+            href={MAPS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Mont Vue Residences location in Google Maps"
+            className="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm border border-sand/10 sm:aspect-[16/10]"
+          >
             <img
               src={siteMap.url}
               alt="Satellite map of the Mont Vue Residences site at Jhikli Dar, Dharamshala"
               loading="eager"
               decoding="async"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
-            <iframe
-              title="Mont Vue Residences location on Google Maps"
-              src={EMBED}
-              loading="eager"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full border-0"
-            />
-          </div>
+            <span className="absolute right-5 bottom-5 inline-flex items-center gap-2 bg-charcoal-deep/85 px-4 py-3 text-[0.6rem] font-semibold tracking-[0.22em] text-sand uppercase">
+              <MapPin className="h-3.5 w-3.5 text-brass-light" /> View location
+            </span>
+          </a>
 
           <figure className="relative aspect-[4/3] w-full overflow-hidden rounded-sm sm:aspect-[16/10]">
             <img
