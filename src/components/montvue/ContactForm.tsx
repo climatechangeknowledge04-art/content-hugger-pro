@@ -2,15 +2,8 @@ import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 import { Phone, Check, Loader2, MessageCircle } from "lucide-react";
 import { waLink } from "@/lib/whatsapp";
-
-/*
- * WORDPRESS INTEGRATION POINT
- * Paste your WordPress webhook / form-handler URL below (e.g. a WPForms,
- * Fluent Forms or Gravity Forms REST endpoint). The form POSTs a JSON
- * payload: { name, email, phone, floor }.
- * Leave empty to run in demo mode (no network call is made).
- */
-const FORM_ACTION_URL = "";
+import { enquirySchema, submitPropertyEnquiry } from "@/lib/enquiries.functions";
+import { Button } from "@/components/ui/button";
 
 const FLOOR_OPTIONS = [
   "1st Floor — INR 1.00 Cr",
@@ -28,23 +21,24 @@ export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [floor, setFloor] = useState(FLOOR_OPTIONS[0]);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const result = enquirySchema.safeParse({ name, email, phone, floor });
+    if (!result.success) {
+      setErrorMessage(result.error.issues[0]?.message ?? "Please check your details.");
+      setStatus("error");
+      return;
+    }
+
     setStatus("submitting");
+    setErrorMessage("");
     try {
-      if (FORM_ACTION_URL) {
-        const response = await fetch(FORM_ACTION_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, phone, floor }),
-        });
-        if (!response.ok) throw new Error("Request failed");
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 900));
-      }
+      await submitPropertyEnquiry({ data: result.data });
       setStatus("success");
     } catch {
+      setErrorMessage("We couldn't send your request. Please call +91 99115 36697.");
       setStatus("error");
     }
   }
@@ -145,6 +139,8 @@ export function ContactForm() {
                   id="mv-name"
                   type="text"
                   required
+                  minLength={2}
+                  maxLength={100}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your full name"
@@ -162,6 +158,7 @@ export function ContactForm() {
                   id="mv-email"
                   type="email"
                   required
+                  maxLength={255}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
@@ -179,6 +176,9 @@ export function ContactForm() {
                   id="mv-phone"
                   type="tel"
                   required
+                  minLength={7}
+                  maxLength={20}
+                  pattern="\+?[0-9][0-9 ()-]{6,19}"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91"
@@ -207,12 +207,12 @@ export function ContactForm() {
               </div>
 
               {status === "error" && (
-                <p className="text-xs tracking-wide text-destructive">
-                  Something went wrong. Please call +91 99115 36697 instead.
+                <p role="alert" className="text-xs tracking-wide text-destructive">
+                  {errorMessage}
                 </p>
               )}
 
-              <button
+              <Button
                 type="submit"
                 disabled={status === "submitting"}
                 className="mt-2 flex items-center justify-center gap-3 bg-brass px-8 py-4 text-[0.65rem] font-bold tracking-[0.35em] text-charcoal-deep uppercase transition-all duration-300 hover:bg-brass-light disabled:opacity-60"
@@ -224,7 +224,7 @@ export function ContactForm() {
                 ) : (
                   "Request a Viewing"
                 )}
-              </button>
+              </Button>
 
               <a
                 href={waLink(
