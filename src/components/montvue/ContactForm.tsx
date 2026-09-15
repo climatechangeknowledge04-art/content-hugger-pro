@@ -80,7 +80,7 @@ export function ContactForm() {
           </a>
           <a
             href={waLink()}
-            target="_top"
+            target="_blank"
             rel="noopener noreferrer"
             className="group mt-4 ml-0 inline-flex items-center gap-4 border border-[#25D366]/60 px-6 py-4 transition-all duration-300 hover:bg-[#25D366] sm:mt-10 sm:ml-4"
           >
@@ -230,7 +230,7 @@ export function ContactForm() {
                 href={waLink(
                   `Hi, I'm ${name || "…"} (${phone || "phone"}). I'm interested in Mont Vue Residences — ${floor}. Please share details.`,
                 )}
-                target="_top"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 border border-[#25D366]/60 px-8 py-4 text-[0.65rem] font-bold tracking-[0.35em] text-sand uppercase transition-all duration-300 hover:bg-[#25D366] hover:text-charcoal-deep"
               >
