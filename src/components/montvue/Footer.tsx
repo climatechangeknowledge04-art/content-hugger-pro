@@ -23,7 +23,7 @@ export function Footer() {
             </a>
             <a
               href={waLink()}
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
               className="mt-2 ml-4 inline-block text-brass-light transition-colors hover:text-sand"
             >

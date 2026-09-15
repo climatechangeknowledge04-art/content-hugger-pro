@@ -25,7 +25,7 @@ export function LocationMap() {
           <div className="flex flex-wrap gap-3">
             <a
               href={MAPS_LINK}
-              target="_blank"
+              target="_top"
               rel="noreferrer"
               className="glass-chip inline-flex shrink-0 items-center gap-2 px-5 py-3 text-[0.6rem] font-semibold tracking-[0.28em] text-sand uppercase transition-colors hover:text-brass-light"
             >
@@ -33,7 +33,7 @@ export function LocationMap() {
             </a>
             <a
               href={DIRECTIONS_LINK}
-              target="_blank"
+              target="_top"
               rel="noreferrer"
               className="inline-flex shrink-0 items-center gap-2 border border-brass/60 px-5 py-3 text-[0.6rem] font-semibold tracking-[0.28em] text-brass-light uppercase transition-colors hover:bg-brass/10"
             >
@@ -45,7 +45,7 @@ export function LocationMap() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
           <a
             href={MAPS_LINK}
-            target="_blank"
+            target="_top"
             rel="noopener noreferrer"
             aria-label="Open the Mont Vue Residences location in Google Maps"
             className="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm border border-sand/10 sm:aspect-[16/10]"

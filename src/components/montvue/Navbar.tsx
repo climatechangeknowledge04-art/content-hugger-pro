@@ -24,7 +24,7 @@ export function Navbar() {
           </a>
           <a
             href={waLink()}
-            target="_blank"
+            target="_top"
             rel="noopener noreferrer"
             className="hidden items-center gap-2 text-xs font-medium tracking-[0.18em] text-sand/80 transition-colors hover:text-brass-light sm:flex"
           >
