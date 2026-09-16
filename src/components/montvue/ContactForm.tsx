@@ -178,7 +178,7 @@ export function ContactForm() {
                   required
                   minLength={7}
                   maxLength={20}
-                  pattern="\+?[0-9][0-9 ()-]{6,19}"
+                  pattern="\+?[0-9][0-9 ()\-]{6,19}"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91"
