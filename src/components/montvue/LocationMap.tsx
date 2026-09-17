@@ -4,8 +4,8 @@ import siteMap from "@/assets/site-map.jpg.asset.json";
 
 const LAT = 32.196217;
 const LNG = 76.334618;
-const MAPS_LINK = `https://www.google.com/maps/search/${LAT},${LNG}`;
-const DIRECTIONS_LINK = `https://www.google.com/maps/dir//${LAT},${LNG}`;
+const MAPS_LINK = `https://maps.google.com/?q=${LAT},${LNG}`;
+const DIRECTIONS_LINK = `https://maps.google.com/?daddr=${LAT},${LNG}`;
 
 export function LocationMap() {
   return (
