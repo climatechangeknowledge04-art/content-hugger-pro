@@ -5,5 +5,10 @@ export const DEFAULT_ENQUIRY =
   "Hi, I'm interested in Mont Vue Residences. Please share details.";
 
 export function waLink(message: string = DEFAULT_ENQUIRY) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const query = new URLSearchParams({
+    phone: WHATSAPP_NUMBER,
+    text: message,
+  });
+
+  return `https://web.whatsapp.com/send?${query.toString()}`;
 }
