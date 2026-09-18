@@ -1,6 +1,6 @@
 import { Play } from "lucide-react";
-import walkthrough from "@/assets/mont-vue-home-walkthrough.webm.asset.json";
-import poster from "@/assets/mont-vue-home-walkthrough-poster.jpg.asset.json";
+import walkthrough from "@/assets/mont-vue-plan-walkthrough.mp4.asset.json";
+import poster from "@/assets/mont-vue-plan-walkthrough-poster.jpg.asset.json";
 
 export function VirtualTour() {
   return (
@@ -19,8 +19,8 @@ export function VirtualTour() {
             Enter at the Front Gate. Walk Through Your Home.
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed font-light text-sand/65 sm:text-base">
-            A cinematic, eye-level journey shaped around the shared 3 BHK plan — from the entrance
-            through the living spaces, bedrooms and out to the mountain-facing balcony.
+            A slower, eye-level journey following the shared 3 BHK plan — from the main door through
+            every living space, bedroom, washroom position and mountain-facing balcony.
           </p>
         </div>
         <figure className="group relative aspect-video min-h-[22rem] overflow-hidden bg-charcoal-soft shadow-lift sm:min-h-[34rem] lg:min-h-[48rem]">
@@ -50,7 +50,7 @@ export function VirtualTour() {
           <figcaption className="pointer-events-none absolute right-5 bottom-16 left-5 flex items-end justify-between gap-4 sm:right-8 sm:bottom-20 sm:left-8">
             <div>
               <p className="flex items-center gap-2 text-[0.6rem] font-bold tracking-[0.3em] text-brass-light uppercase">
-                <Play className="h-3.5 w-3.5 fill-current" /> Full home walkthrough
+                <Play className="h-3.5 w-3.5 fill-current" /> 68-second full home walkthrough
               </p>
               <p className="mt-2 font-display text-2xl font-medium text-sand sm:text-4xl">
                 Front Gate to Mountain Balcony
