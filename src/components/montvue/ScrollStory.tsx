@@ -96,10 +96,10 @@ function Frame({ index, progress }: { index: number; progress: MotionValue<numbe
     <motion.img
       src={chapter.src}
       alt={chapter.alt}
-      loading="eager"
+      loading={index === 0 ? "eager" : "lazy"}
       decoding="async"
       style={{ opacity, scale, zIndex: index }}
-      className="absolute inset-0 h-full w-full object-cover"
+      className="gpu-layer absolute inset-0 h-full w-full object-cover"
     />
   );
 }

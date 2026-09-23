@@ -103,10 +103,10 @@ function RoomFrame({ index, progress }: { index: number; progress: MotionValue<n
     <motion.img
       src={room.src}
       alt={room.alt}
-      loading="eager"
+      loading={index === 0 ? "eager" : "lazy"}
       decoding="async"
       style={{ opacity, scale }}
-      className="absolute inset-0 h-full w-full object-cover will-change-transform"
+      className="gpu-layer absolute inset-0 h-full w-full object-cover"
     />
   );
 }

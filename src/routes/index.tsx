@@ -77,12 +77,25 @@ function Index() {
       <PropertyIntro />
       <HealthBenefits />
       <ScrollStory />
-      <Neighbourhood />
-      <LocationMap />
-      <Discover />
-      <CinematicFilm />
-      <ViewsBanner />
-      <ContactForm />
+      {/* Deep sections are skipped by the browser until scrolled near */}
+      <div className="defer-paint">
+        <Neighbourhood />
+      </div>
+      <div className="defer-paint">
+        <LocationMap />
+      </div>
+      <div className="defer-paint">
+        <Discover />
+      </div>
+      <div className="defer-paint">
+        <CinematicFilm />
+      </div>
+      <div className="defer-paint">
+        <ViewsBanner />
+      </div>
+      <div className="defer-paint">
+        <ContactForm />
+      </div>
       <Footer />
       <WhatsAppFab />
     </main>
