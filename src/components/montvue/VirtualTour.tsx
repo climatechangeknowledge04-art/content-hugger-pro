@@ -1,4 +1,4 @@
-import walkthrough from "@/assets/mont-vue-plan-walkthrough.mp4.asset.json";
+import walkthrough from "@/assets/mont-vue-plan-walkthrough.webm.asset.json";
 import poster from "@/assets/mont-vue-plan-walkthrough-poster.jpg.asset.json";
 
 export function VirtualTour() {
