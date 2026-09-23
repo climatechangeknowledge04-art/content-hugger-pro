@@ -1,4 +1,4 @@
-- [ ] Restore the original revealing three-floor building model in the building section.
-- [ ] Rename Bedroom Details to Interiors and use the original living, kitchen, and bedroom images in Refined, Quietly.
-- [ ] Add three floor-specific, captioned photo galleries with fullscreen browsing.
-- [ ] Verify desktop and mobile gallery and building behavior.
+- [x] Restore the original revealing three-floor building model in the building section.
+- [x] Rename Bedroom Details to Interiors and use the original living, kitchen, and bedroom images in Refined, Quietly.
+- [x] Add three floor-specific, captioned photo galleries with fullscreen browsing.
+- [x] Verify desktop and mobile gallery and building behavior.
