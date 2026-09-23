@@ -85,57 +85,18 @@ const FILMS = [
   },
 ] as const;
 
-function FilmCard({
-  film,
-  index,
-  onNear,
-  warm,
-}: {
-  film: (typeof FILMS)[number];
-  index: number;
-  onNear: (index: number) => void;
-  warm: boolean;
-}) {
-  /* A wide margin plus the "warm" flag from the previous card means the clip
-     is already downloading well before it reaches the screen. */
-  const { ref, near } = useInView<HTMLElement>("1200px");
-  const active = near || warm;
-
-  useEffect(() => {
-    if (near) onNear(index);
-  }, [near, index, onNear]);
-
+function FilmCard({ film, index }: { film: (typeof FILMS)[number]; index: number }) {
   return (
-    <figure ref={ref} className="group relative overflow-hidden rounded-sm bg-charcoal-deep shadow-lift">
+    <figure className="group relative overflow-hidden rounded-sm bg-charcoal-deep shadow-lift">
       <div className="relative aspect-video min-h-[22rem] w-full overflow-hidden sm:min-h-[32rem] lg:min-h-[42rem]">
-        {/* The still frame paints instantly, so a card is never black */}
-        <img
-          src={film.poster}
-          alt={film.title}
-          loading="eager"
-          decoding="async"
-          fetchPriority={index === 0 ? "high" : "auto"}
-          width={1280}
-          height={720}
-          className="absolute inset-0 h-full w-full object-cover"
+        {/* Only the chapter on screen keeps a video decoder; the rest show their still */}
+        <LazyVideo
+          src={film.src}
+          poster={film.poster}
+          label={film.title}
+          className="transition-transform duration-700 ease-out group-hover:scale-[1.025]"
         />
-        {active && (
-          <video
-            src={film.src}
-            poster={film.poster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            onLoadedMetadata={(e) => {
-              void e.currentTarget.play().catch(() => {});
-            }}
-            aria-label={film.title}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep via-charcoal-deep/5 to-charcoal-deep/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-deep via-charcoal-deep/5 to-charcoal-deep/10" />
       </div>
 
       <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-8">
