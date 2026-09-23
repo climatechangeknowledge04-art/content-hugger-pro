@@ -1,5 +1,5 @@
-import walkthrough from "@/assets/mont-vue-walkthrough-v63.webm.asset.json";
-import poster from "@/assets/mont-vue-walkthrough-v63-poster.jpg.asset.json";
+import walkthrough from "@/assets/mont-vue-fullfloor-walk.webm.asset.json";
+import poster from "@/assets/mont-vue-fullfloor-walk-poster.jpg.asset.json";
 import { LazyVideo } from "@/components/montvue/LazyVideo";
 
 export function VirtualTour() {
