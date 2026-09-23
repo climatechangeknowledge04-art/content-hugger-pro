@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
+import { waLink } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import living from "@/assets/interior-living.jpg";
@@ -68,6 +70,48 @@ export function FloorGalleries() {
             </Button>
           ))}
         </div>
+
+        {/* Availability — stated quietly, no pressure */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 border border-sand/15 bg-charcoal p-8 sm:p-12"
+        >
+          <p className="eyebrow">Residence Status</p>
+          <div className="mt-6 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-xl">
+              <h3 className="font-display text-3xl leading-tight font-medium text-sand sm:text-4xl">
+                Four residences remain.
+              </h3>
+              <p className="mt-5 text-sm leading-relaxed font-light text-sand/65">
+                Of the limited release, four homes are still open for
+                allocation — one position per floor. The Diwali offer remains
+                valid on current terms, and we are happy to walk you through
+                both whenever it suits you.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
+              <a
+                href={waLink(
+                  "Hello, I would like to enquire about the 4 remaining residences and current Diwali terms at Mont Vue.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-brass/60 px-6 py-3.5 text-[0.65rem] font-semibold tracking-[0.25em] text-brass-light uppercase transition-colors duration-300 hover:bg-brass hover:text-charcoal-deep"
+              >
+                Message on WhatsApp
+              </a>
+              <a
+                href="#viewing"
+                className="inline-flex items-center justify-center gap-2 border border-sand/25 px-6 py-3.5 text-[0.65rem] font-semibold tracking-[0.25em] text-sand/80 uppercase transition-colors duration-300 hover:border-sand/60 hover:text-sand"
+              >
+                Private enquiry
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       <Dialog open={selected !== null} onOpenChange={(open) => { if (!open) setSelected(null); }}>
