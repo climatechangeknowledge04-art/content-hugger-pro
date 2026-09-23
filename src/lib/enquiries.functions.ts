@@ -20,6 +20,54 @@ export const enquirySchema = z.object({
 
 export type EnquiryInput = z.infer<typeof enquirySchema>;
 
+const OWNER_EMAIL = "montvue.dharamshala@gmail.com";
+
+function toBase64(value: string) {
+  return btoa(
+    Array.from(new TextEncoder().encode(value), (byte) => String.fromCharCode(byte)).join(""),
+  );
+}
+
+async function sendOwnerEmail(data: EnquiryInput) {
+  const lovableKey = process.env["LOVABLE_API_KEY"];
+  const connectionKey = process.env["GOOGLE_MAIL_API_KEY"];
+
+  if (!lovableKey || !connectionKey) return;
+
+  const lines = [
+    `To: ${OWNER_EMAIL}`,
+    `Subject: New Mont Vue enquiry from ${data.name}`,
+    "MIME-Version: 1.0",
+    'Content-Type: text/plain; charset="UTF-8"',
+    "",
+    `Name: ${data.name}`,
+    `Email: ${data.email}`,
+    `Phone: ${data.phone}`,
+    `Interested in: ${data.floor}`,
+    "",
+    "Sent from the Mont Vue Residences website enquiry form.",
+  ].join("\r\n");
+
+  const raw = toBase64(lines).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+
+  const response = await fetch(
+    "https://connector-gateway.lovable.dev/google_mail/gmail/v1/users/me/messages/send",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${lovableKey}`,
+        "X-Connection-Api-Key": connectionKey,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ raw }),
+    },
+  );
+
+  if (!response.ok) {
+    console.error(`Enquiry email failed [${response.status}]: ${await response.text()}`);
+  }
+}
+
 export const submitPropertyEnquiry = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => enquirySchema.parse(input))
   .handler(async ({ data }) => {
@@ -43,6 +91,10 @@ export const submitPropertyEnquiry = createServerFn({ method: "POST" })
     if (!response.ok) {
       throw new Error("Your enquiry could not be saved.");
     }
+
+    await sendOwnerEmail(data).catch((error) => {
+      console.error("Enquiry email error", error);
+    });
 
     return { success: true };
   });
