@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import { useInView } from "@/hooks/use-in-view";
 import heroVideo from "@/assets/hero-clouds.mp4.asset.json";
 import heroVideoTwo from "@/assets/film-mountain-summit.mp4.asset.json";
 import poster from "@/assets/hero-poster.jpg";
