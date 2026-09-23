@@ -9,7 +9,6 @@ import filmMountainSummit from "@/assets/film-dhauladhar-upload.webm.asset.json"
 import filmMarketWalk from "@/assets/film-market-walk.mp4.asset.json";
 import filmHimalayanFood from "@/assets/film-himalayan-food.mp4.asset.json";
 import filmKangraValley from "@/assets/film-tea-gardens-upload.webm.asset.json";
-import filmTerraceView from "@/assets/film-terrace-view.mp4.asset.json";
 import posterForestWalk from "@/assets/poster-film-forest-walk.jpg.asset.json";
 import posterTriundTrek from "@/assets/poster-film-triund-trek.jpg.asset.json";
 import posterRidgeClimb from "@/assets/poster-film-ridge-climb.jpg.asset.json";
@@ -18,7 +17,6 @@ import posterMountainSummit from "@/assets/poster-dhauladhar-upload.jpg.asset.js
 import posterMarketWalk from "@/assets/poster-film-market-walk.jpg.asset.json";
 import posterHimalayanFood from "@/assets/poster-film-himalayan-food.jpg.asset.json";
 import posterKangraValley from "@/assets/poster-tea-gardens-upload.jpg.asset.json";
-import posterTerraceView from "@/assets/poster-film-terrace-view.jpg.asset.json";
 
 const FILMS = [
   {
@@ -85,14 +83,6 @@ const FILMS = [
     caption:
       "Travel between green terraces and quiet villages with the Dhauladhars always on the horizon.",
   },
-  {
-    src: filmTerraceView.url,
-    poster: posterTerraceView.url,
-    tag: "From Home",
-    title: "The View You Wake Up To",
-    caption:
-      "Walk onto the terrace as clouds clear from the peaks — an extraordinary view made everyday at Mont Vue.",
-  },
 ] as const;
 
 function FilmCard({
@@ -153,7 +143,7 @@ function FilmCard({
           {film.tag}
         </span>
         <span className="text-[0.6rem] font-semibold tracking-[0.24em] text-sand/70 uppercase">
-          10 sec · {String(index + 1).padStart(2, "0")}/09
+           10 sec · {String(index + 1).padStart(2, "0")}/08
         </span>
       </div>
 
@@ -183,13 +173,13 @@ export function CinematicFilm() {
         <div className="mx-auto max-w-7xl">
           <p className="flex items-center gap-2.5 text-[0.6rem] font-semibold tracking-[0.35em] text-brass uppercase">
             <Clapperboard className="h-3.5 w-3.5" />
-            Life in Motion · Nine Chapters
+            Life in Motion · Eight Chapters
           </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-medium text-sand sm:text-6xl">
             Experience Dharamshala, on Film
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-sand/70 sm:text-lg">
-            Nine immersive journeys through forest, trail, summit, market and home — seen from within the experience, not only from above.
+            Eight immersive journeys through forest, trail, summit and market — seen from within the experience, not only from above.
           </p>
         </div>
 

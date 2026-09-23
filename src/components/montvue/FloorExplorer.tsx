@@ -1,5 +1,5 @@
 import { stops } from "@/lib/stops";
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useMotionValueEvent,
@@ -7,12 +7,12 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { Scene3D } from "@/components/three/Scene3D";
+import { BuildingReveal } from "@/components/montvue/BuildingReveal";
 import living from "@/assets/interior-living.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
 import balcony from "@/assets/room-balcony-garden.jpg";
-import terrace from "@/assets/story-stadium.jpg";
+import bedroomStorage from "@/assets/montvue-bedroom-storage.jpg.asset.json";
 import backdropAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 
 const FLOORS = [
@@ -20,9 +20,6 @@ const FLOORS = [
   { label: "2nd Floor", price: "INR 1.15 Cr" },
   { label: "3rd Floor", price: "INR 1.25 Cr" },
 ];
-
-/* The exterior chapter owns the first stretch; the walkthrough takes over after */
-const EXTERIOR_END = 0.4;
 
 const ROOMS = [
   {
@@ -50,10 +47,10 @@ const ROOMS = [
     alt: "Balcony with planters and a glass railing above the deodar forest",
   },
   {
-    src: terrace,
-    eyebrow: "Step 05 · The Terrace",
-    title: "Insane Views, Every Evening",
-    alt: "HPCA cricket stadium and the Dhauladhar range seen from the terrace",
+    src: bedroomStorage.url,
+    eyebrow: "Step 05 · Interiors",
+    title: "Thoughtful Details",
+    alt: "Bedroom interior with full-height timber wardrobe and frosted glass doors",
   },
 ] as const;
 
@@ -144,13 +141,6 @@ export function FloorExplorer() {
     offset: ["start start", "end end"],
   });
 
-  /* The 3D model only plays the exterior reveal, eased so slabs glide apart */
-  const read = useCallback(() => {
-    const p = Math.min(scrollYProgress.get() / EXTERIOR_END, 1);
-    const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-    return eased * 0.3;
-  }, [scrollYProgress]);
-
   /* Coarse phase flip — the exterior layer hides entirely once we walk inside */
   const [inside, setInside] = useState(false);
   useMotionValueEvent(scrollYProgress, "change", (v) => {
@@ -190,7 +180,7 @@ export function FloorExplorer() {
           />
           <div className="absolute inset-0 bg-charcoal-deep/45" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-deep/75 via-transparent to-charcoal-deep/85" />
-          {!inside && <Scene3D name="building" progress={read} />}
+          <BuildingReveal progress={scrollYProgress} />
         </div>
 
         {/* Chapter narration */}
