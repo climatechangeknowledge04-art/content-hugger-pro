@@ -10,6 +10,7 @@ import { VirtualTour } from "@/components/montvue/VirtualTour";
 import { ViewsBanner } from "@/components/montvue/ViewsBanner";
 import { StepInside } from "@/components/montvue/StepInside";
 import { Interiors } from "@/components/montvue/Interiors";
+import { FloorGalleries } from "@/components/montvue/FloorGalleries";
 import { Neighbourhood } from "@/components/montvue/Neighbourhood";
 import { LocationMap } from "@/components/montvue/LocationMap";
 import { Discover } from "@/components/montvue/Discover";
@@ -72,6 +73,7 @@ function Index() {
       <VirtualTour />
       <StepInside />
       <Interiors />
+      <FloorGalleries />
       <PropertyIntro />
       <HealthBenefits />
       <ScrollStory />
