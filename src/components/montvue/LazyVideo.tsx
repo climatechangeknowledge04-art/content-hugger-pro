@@ -47,11 +47,11 @@ export function LazyVideo({
       },
       { rootMargin },
     );
-    /* "Visible" means a meaningful part of the card is on screen — a sliver
-       peeking in does not deserve a decoder. */
+    /* "Visible" means most of the card is on screen — a sliver peeking in does
+       not deserve a hardware decoder. Keeps simultaneous playback to 1–2. */
     const playIO = new IntersectionObserver(
       (entries) => setVisible(entries.some((e) => e.isIntersecting)),
-      { threshold: 0.25 },
+      { threshold: 0.6 },
     );
 
     nearIO.observe(el);
