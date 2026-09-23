@@ -69,6 +69,7 @@ export function Hero() {
         {videoSrc ? (
           <video
             key={videoSrc}
+            ref={videoRef}
             className="h-full w-full object-cover"
             src={videoSrc}
             poster={poster}
