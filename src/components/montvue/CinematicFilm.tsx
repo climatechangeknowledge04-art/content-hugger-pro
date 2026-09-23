@@ -1,6 +1,5 @@
 import { Clapperboard } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
-import { useInView } from "@/hooks/use-in-view";
+import { LazyVideo } from "@/components/montvue/LazyVideo";
 import filmForestWalk from "@/assets/film-forest-walk.mp4.asset.json";
 import filmTriundTrek from "@/assets/film-triund-trek.mp4.asset.json";
 import filmRidgeClimb from "@/assets/film-ridge-climb.mp4.asset.json";
@@ -121,13 +120,6 @@ function FilmCard({ film, index }: { film: (typeof FILMS)[number]; index: number
 }
 
 export function CinematicFilm() {
-  /* Whichever clip is closest also warms up the next one, so the next
-     chapter is already buffered by the time you scroll to it. */
-  const [reached, setReached] = useState(0);
-  const handleNear = useCallback((i: number) => {
-    setReached((r) => (i > r ? i : r));
-  }, []);
-
   return (
     <section id="film" className="bg-charcoal-deep">
       <div className="mx-auto max-w-[100rem] px-4 py-24 sm:px-6 lg:px-10 lg:py-32">
@@ -146,13 +138,7 @@ export function CinematicFilm() {
 
         <div className="mt-16 grid gap-8 lg:gap-12">
           {FILMS.map((film, index) => (
-            <FilmCard
-              key={film.title}
-              film={film}
-              index={index}
-              onNear={handleNear}
-              warm={index <= reached + 1}
-            />
+            <FilmCard key={film.title} film={film} index={index} />
           ))}
         </div>
       </div>
