@@ -9,8 +9,8 @@ export function BuildingReveal({ progress }: { progress: MotionValue<number> }) 
   ] as const;
 
   return (
-    <div className="pointer-events-none absolute inset-0 flex items-center justify-center sm:justify-start sm:pl-[8%] lg:pl-[16%]" aria-label="Illustration of the three residence floors separating">
-      <div className="relative mt-[-5rem] w-[min(65vw,360px)] sm:mt-0 sm:w-[min(48vw,460px)]" style={{ perspective: 900 }}>
+    <div className="pointer-events-none absolute inset-0 flex items-center justify-center sm:translate-y-12 sm:justify-start sm:pl-[8%] lg:pl-[16%]" aria-label="Illustration of the three residence floors separating">
+      <div className="relative mt-[-5rem] w-[min(65vw,360px)] sm:mt-0 sm:w-[min(40vw,460px)]" style={{ perspective: 900 }}>
         <div className="relative aspect-[1/1.18]" style={{ transform: "rotateY(-12deg) rotateX(5deg)", transformStyle: "preserve-3d" }}>
           <div className="absolute inset-x-[7%] bottom-[4%] h-[8%] skew-x-[-18deg] bg-charcoal-deep/75 blur-md" />
           <div className="absolute inset-x-[8%] bottom-[5%] h-[8%] border-t border-brass/50 bg-charcoal-soft" />
