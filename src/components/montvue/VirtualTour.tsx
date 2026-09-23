@@ -1,5 +1,5 @@
-import walkthrough from "@/assets/mont-vue-plan-walkthrough-corrected.webm.asset.json";
-import poster from "@/assets/mont-vue-plan-walkthrough-poster.jpg.asset.json";
+import walkthrough from "@/assets/mont-vue-walkthrough-v63.webm.asset.json";
+import poster from "@/assets/mont-vue-walkthrough-v63-poster.jpg.asset.json";
 
 export function VirtualTour() {
   return (
@@ -47,9 +47,7 @@ export function VirtualTour() {
           />
         </figure>
         <p className="mt-4 text-xs leading-relaxed text-sand/50">
-          Visualisation assembled from supplied footage and reference images. Washroom locations are
-          shown on the floor plan; the repeated bedroom view illustrates the three rooms, not their
-          individual finished interiors.
+          Indicative walkthrough visualisation of the 3 BHK layout.
         </p>
       </div>
     </section>
