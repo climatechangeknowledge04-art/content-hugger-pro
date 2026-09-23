@@ -36,9 +36,9 @@ const ROOMS = [
     alt: "View from a Mont Vue balcony over deodar forest to the Dhauladhar range",
   },
   {
-    key: "bedroom-details",
+    key: "interiors",
     src: bedroomStorage.url,
-    label: "Bedroom Details",
+    label: "Interiors",
     note: "Storage designed into the room",
     alt: "Bedroom with a built-in timber and frosted-glass wardrobe",
   },

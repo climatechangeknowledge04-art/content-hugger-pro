@@ -8,6 +8,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import { BuildingReveal } from "@/components/montvue/BuildingReveal";
+import { Scene3D } from "@/components/three/Scene3D";
 import living from "@/assets/interior-living.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
@@ -180,7 +181,9 @@ export function FloorExplorer() {
           />
           <div className="absolute inset-0 bg-charcoal-deep/45" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-deep/75 via-transparent to-charcoal-deep/85" />
-          <BuildingReveal progress={scrollYProgress} />
+          <div className="absolute inset-0">
+            <Scene3D name="building" progress={() => scrollYProgress.get()} fallback={<BuildingReveal progress={scrollYProgress} />} />
+          </div>
         </div>
 
         {/* Chapter narration */}

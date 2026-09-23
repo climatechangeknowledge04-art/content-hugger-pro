@@ -515,7 +515,9 @@ function ScrollRig({
   const b = useRef(new THREE.Vector3());
 
   useFrame((_, delta) => {
-    const p = THREE.MathUtils.clamp(progress ? progress() : 0, 0, 1);
+    // Keep the original building on screen throughout this chapter; the room
+    // walkthrough is shown separately with photography after the reveal.
+    const p = THREE.MathUtils.clamp(progress ? progress() : 0, 0, 0.3);
 
     /* floors separate between 4% and 26% of the section, then re-stack */
     explode.current = THREE.MathUtils.clamp((p - 0.04) / 0.22, 0, 1);
