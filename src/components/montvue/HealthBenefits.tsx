@@ -92,7 +92,7 @@ export function HealthBenefits() {
               height={1008}
               alt="Snow-capped Dhauladhar peaks rising above Dharamshala"
               className="relative w-full object-cover shadow-lift"
-              loading="eager"
+              loading="lazy"
             />
           </motion.div>
         </div>

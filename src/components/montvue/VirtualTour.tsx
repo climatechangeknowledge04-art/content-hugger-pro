@@ -1,5 +1,6 @@
 import walkthrough from "@/assets/mont-vue-walkthrough-v63.webm.asset.json";
 import poster from "@/assets/mont-vue-walkthrough-v63-poster.jpg.asset.json";
+import { LazyVideo } from "@/components/montvue/LazyVideo";
 
 export function VirtualTour() {
   return (
@@ -23,27 +24,11 @@ export function VirtualTour() {
           </p>
         </div>
         <figure className="group relative h-[22rem] w-full overflow-hidden bg-charcoal-soft shadow-lift sm:aspect-video sm:h-auto sm:min-h-[34rem] lg:min-h-[48rem]">
-          <img
-            src={poster.url}
-            alt="Front entrance of the Mont Vue residence"
-            width={1344}
-            height={768}
-            loading="eager"
-            fetchPriority="high"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <video
+          <LazyVideo
             src={walkthrough.url}
             poster={poster.url}
-            autoPlay
-            muted
-            loop
-            playsInline
             controls
-            preload="auto"
-            onLoadedData={(event) => void event.currentTarget.play().catch(() => {})}
-            className="absolute inset-0 h-full w-full object-cover"
-            aria-label="Cinematic walkthrough from the front gate through the Mont Vue home"
+            label="Cinematic walkthrough from the front gate through the Mont Vue home"
           />
         </figure>
         <p className="mt-4 text-xs leading-relaxed text-sand/50">

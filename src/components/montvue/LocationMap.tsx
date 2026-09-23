@@ -53,7 +53,7 @@ export function LocationMap() {
             <img
               src={siteMap.url}
               alt="Satellite map of the Mont Vue Residences site at Jhikli Dar, Dharamshala"
-              loading="eager"
+              loading="lazy"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
@@ -66,7 +66,7 @@ export function LocationMap() {
             <img
               src={panorama.url}
               alt="The snow-capped Dhauladhar range seen across the forested ridge at Dharamshala"
-              loading="eager"
+              loading="lazy"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
             />

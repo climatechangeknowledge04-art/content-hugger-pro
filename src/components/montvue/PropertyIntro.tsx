@@ -77,7 +77,7 @@ export function PropertyIntro() {
               height={1008}
               alt="Snow-capped Dhauladhar peaks rising above Dharamshala"
               className="relative w-full object-cover shadow-lift"
-              loading="eager"
+              loading="lazy"
             />
             <motion.figure
               initial={{ opacity: 0, y: 24 }}
@@ -92,7 +92,7 @@ export function PropertyIntro() {
                 height={1063}
                 alt="Real balcony view over forested Himalayan slopes"
                 className="aspect-[3/2] w-full object-cover"
-                loading="eager"
+                loading="lazy"
               />
             </motion.figure>
           </motion.div>

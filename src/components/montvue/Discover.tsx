@@ -179,7 +179,7 @@ export function Discover() {
               <img
                 src={p.src}
                 alt={p.alt}
-                loading="eager"
+                loading="lazy"
                 fetchPriority={i < 4 ? "high" : "auto"}
                 decoding="async"
                 width={1280}

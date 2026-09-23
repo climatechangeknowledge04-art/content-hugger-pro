@@ -281,6 +281,27 @@
   box-shadow: 0 0 12px 2px oklch(0.748 0.087 81.7 / 0.55);
 }
 
+/* ---------- Performance helpers ---------- */
+
+/* Deep sections skip layout + paint entirely until scrolled near */
+@utility defer-paint {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1400px;
+}
+
+/* Promote scroll-driven layers to the GPU so sticky scenes never jank */
+@utility gpu-layer {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Leader line from anchor to glass panel */
 @utility mv-leader {
   display: block;
