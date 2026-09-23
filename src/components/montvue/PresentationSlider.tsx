@@ -6,7 +6,6 @@ import living from "@/assets/interior-living.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
 import balcony from "@/assets/room-balcony.jpg";
-import stadium from "@/assets/story-stadium.jpg";
 import interiorDetail from "@/assets/montvue-kitchen-glazing.jpg.asset.json";
 import dhauladharAsset from "@/assets/dhauladhar-peaks.jpg.asset.json";
 

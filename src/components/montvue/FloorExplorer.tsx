@@ -1,5 +1,5 @@
 import { stops } from "@/lib/stops";
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useMotionValueEvent,
@@ -20,9 +20,6 @@ const FLOORS = [
   { label: "2nd Floor", price: "INR 1.15 Cr" },
   { label: "3rd Floor", price: "INR 1.25 Cr" },
 ];
-
-/* The exterior chapter owns the first stretch; the walkthrough takes over after */
-const EXTERIOR_END = 0.4;
 
 const ROOMS = [
   {
@@ -143,13 +140,6 @@ export function FloorExplorer() {
     target: targetRef,
     offset: ["start start", "end end"],
   });
-
-  /* The 3D model only plays the exterior reveal, eased so slabs glide apart */
-  const read = useCallback(() => {
-    const p = Math.min(scrollYProgress.get() / EXTERIOR_END, 1);
-    const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-    return eased * 0.3;
-  }, [scrollYProgress]);
 
   /* Coarse phase flip — the exterior layer hides entirely once we walk inside */
   const [inside, setInside] = useState(false);
