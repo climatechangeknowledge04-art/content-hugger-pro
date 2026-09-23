@@ -42,9 +42,21 @@ export function Hero() {
     return () => window.clearTimeout(t);
   }, []);
 
+  /* Once the hero scrolls away the clip is paused, freeing the decoder and
+     the CPU for whatever the visitor is actually looking at. */
+  const { ref: sectionRef, visible } = useInView<HTMLElement>("0px");
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (visible) void v.play().catch(() => {});
+    else if (!v.paused) v.pause();
+  }, [visible, videoSrc]);
+
   return (
     <section
       id="top"
+      ref={sectionRef}
       className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden"
     >
       {/* Cinematic looping mountain backdrop */}
