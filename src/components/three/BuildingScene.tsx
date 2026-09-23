@@ -487,9 +487,9 @@ type Stop = {
 };
 
 const STOPS: Stop[] = [
-  { p: 0.0, pos: [9, 4.4, 12], look: [0, 1.8, 0] },
-  { p: 0.16, pos: [11, 7.5, 13], look: [0, 2.6, 0] },
-  { p: 0.3, pos: [4, 6.4, 9.5], look: [0, 2.4, 0] },
+  { p: 0.0, pos: [12, 8, 19], look: [0, 2.4, 0] },
+  { p: 0.16, pos: [14, 9, 20], look: [0, 2.7, 0] },
+  { p: 0.3, pos: [11, 9, 19], look: [0, 2.7, 0] },
   { p: 0.42, pos: [OX - 9, 1.75, 7.5], look: [OX - 4, 1.6, 2] },
   { p: 0.55, pos: [OX - 5.4, 1.7, 4.6], look: [OX - 3.4, 1.4, 1.4] },
   { p: 0.68, pos: [OX + 1.4, 1.7, 2.0], look: [OX + 4.6, 1.15, 4.4] },
@@ -508,7 +508,7 @@ function ScrollRig({
   progress: ProgressFn;
   explode: React.RefObject<number>;
 }) {
-  const { camera } = useThree();
+  const { camera, size } = useThree();
   const pos = useRef(new THREE.Vector3(...STOPS[0]!.pos));
   const look = useRef(new THREE.Vector3(...STOPS[0]!.look));
   const a = useRef(new THREE.Vector3());
@@ -544,7 +544,9 @@ function ScrollRig({
     const k = 1 - Math.pow(0.0006, delta);
     pos.current.lerp(a.current, k);
     look.current.lerp(b.current, k);
-    camera.position.copy(pos.current);
+    const aspect = size.width / size.height;
+    const distance = Math.max(1, Math.min(2, 0.9 / aspect));
+    camera.position.copy(look.current).addScaledVector(a.current.copy(pos.current).sub(look.current), distance);
     camera.lookAt(look.current);
   });
   return null;

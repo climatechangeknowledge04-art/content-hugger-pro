@@ -194,7 +194,7 @@ export function FloorExplorer() {
                 inside ? "opacity-0" : "opacity-100"
               }`}
             >
-              <p className="eyebrow">The Building</p>
+          <p className="eyebrow">The Building</p>
               <p className="mt-3 font-display text-3xl leading-[1.05] font-medium text-sand sm:text-4xl">
                 Three Floors, Separated
               </p>
