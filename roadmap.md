@@ -2,3 +2,5 @@
 - [x] Rename Bedroom Details to Interiors and use the original living, kitchen, and bedroom images in Refined, Quietly.
 - [x] Add three floor-specific, captioned photo galleries with fullscreen browsing.
 - [x] Verify desktop and mobile gallery and building behavior.
+- [x] Keep the three-floor building visible even when 3D rendering is unavailable.
+- [x] Remove separate floor galleries and show original room photos first, followed by additional interiors, with fullscreen viewing.
