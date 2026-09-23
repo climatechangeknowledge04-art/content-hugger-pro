@@ -64,15 +64,18 @@ function Fallback() {
 export function Scene3D({
   name,
   progress,
+  fallback,
 }: {
   name: "hero" | "journey" | "building" | "floorplan";
   progress?: (() => number) | undefined;
+  fallback?: ReactNode;
 }) {
   const Comp = SCENES[name]!;
+  const fallbackView = fallback ?? <Fallback />;
   return (
-    <ClientOnly fallback={<Fallback />}>
-      <SceneBoundary fallback={<Fallback />}>
-        <Suspense fallback={<Fallback />}>
+    <ClientOnly fallback={fallbackView}>
+      <SceneBoundary fallback={fallbackView}>
+        <Suspense fallback={fallbackView}>
           <Comp progress={progress} />
         </Suspense>
       </SceneBoundary>

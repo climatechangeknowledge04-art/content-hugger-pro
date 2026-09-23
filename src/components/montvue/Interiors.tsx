@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import interiorLiving from "@/assets/montvue-living-balcony.jpg.asset.json";
-import interiorBedroom from "@/assets/montvue-bedroom-storage.jpg.asset.json";
-import interiorKitchen from "@/assets/montvue-kitchen-glazing.jpg.asset.json";
+import interiorLiving from "@/assets/interior-living.jpg";
+import interiorBedroom from "@/assets/room-bedroom.jpg";
+import interiorKitchen from "@/assets/interior-kitchen.jpg";
 
 const IMAGES = [
-  { src: interiorLiving.url, caption: "Living room" },
-  { src: interiorBedroom.url, caption: "Bedroom" },
-  { src: interiorKitchen.url, caption: "Kitchen" },
+  { src: interiorLiving, caption: "Living room" },
+  { src: interiorKitchen, caption: "Kitchen" },
+  { src: interiorBedroom, caption: "Bedroom" },
 ];
 
 export function Interiors() {

@@ -22,7 +22,7 @@ export function VirtualTour() {
             the living spaces, three bedrooms, washroom positions and mountain-facing balconies.
           </p>
         </div>
-        <figure className="group relative aspect-video min-h-[22rem] overflow-hidden bg-charcoal-soft shadow-lift sm:min-h-[34rem] lg:min-h-[48rem]">
+        <figure className="group relative h-[22rem] w-full overflow-hidden bg-charcoal-soft shadow-lift sm:aspect-video sm:h-auto sm:min-h-[34rem] lg:min-h-[48rem]">
           <img
             src={poster.url}
             alt="Front entrance of the Mont Vue residence"
