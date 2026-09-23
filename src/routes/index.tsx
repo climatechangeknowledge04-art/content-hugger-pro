@@ -69,12 +69,12 @@ function Index() {
       <Hero />
       <PresentationSlider />
       <ScrollStory />
-      <PropertyIntro />
-      <HealthBenefits />
       <FloorExplorer />
       <VirtualTour />
       <StepInside />
       <Interiors />
+      <PropertyIntro />
+      <HealthBenefits />
       <Neighbourhood />
       <LocationMap />
       <Discover />

@@ -7,6 +7,7 @@ import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
 import balcony from "@/assets/room-balcony.jpg";
 import stadium from "@/assets/story-stadium.jpg";
+import interiorDetail from "@/assets/montvue-kitchen-glazing.jpg.asset.json";
 import dhauladharAsset from "@/assets/dhauladhar-peaks.jpg.asset.json";
 
 const dhauladhars = dhauladharAsset.url;
@@ -59,13 +60,13 @@ const SLIDES = [
     alt: "Balcony with glass railing looking over deodar forest to snow-capped peaks",
   },
   {
-    key: "stadium",
-    src: stadium,
-    eyebrow: "From the Terrace",
-    title: "The stadium, below you.",
-    text: "HPCA Stadium sits minutes down the ridge — visible on a clear morning from the terrace.",
-    chips: ["~10 min drive", "Terrace outlook"],
-    alt: "HPCA cricket stadium in Dharamshala with the Dhauladhar range behind",
+    key: "interior-detail",
+    src: interiorDetail.url,
+    eyebrow: "Interiors",
+    title: "Space to make your own.",
+    text: "Thoughtful materials, generous daylight and room to settle into the mountains.",
+    chips: ["Considered finishes", "Natural light"],
+    alt: "Kitchen behind black-framed glass doors with bright natural light",
   },
   {
     key: "peaks",

@@ -4,7 +4,7 @@ import living from "@/assets/interior-living.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import balcony from "@/assets/room-balcony.jpg";
-import terrace from "@/assets/story-stadium.jpg";
+import bedroomStorage from "@/assets/montvue-bedroom-storage.jpg.asset.json";
 
 const ROOMS = [
   {
@@ -36,11 +36,11 @@ const ROOMS = [
     alt: "View from a Mont Vue balcony over deodar forest to the Dhauladhar range",
   },
   {
-    key: "terrace",
-    src: terrace,
-    label: "Terrace View",
-    note: "Stadium below, snowline above",
-    alt: "HPCA cricket stadium and the Dhauladhar range seen from above the ridge",
+    key: "bedroom-details",
+    src: bedroomStorage.url,
+    label: "Bedroom Details",
+    note: "Storage designed into the room",
+    alt: "Bedroom with a built-in timber and frosted-glass wardrobe",
   },
 ] as const;
 
@@ -56,8 +56,7 @@ export function StepInside() {
           Walk Through the <span className="text-brass-light italic">Home.</span>
         </h2>
         <p className="mt-4 max-w-md text-sm leading-relaxed font-light text-sand/60">
-          Move room to room — living, kitchen, bedroom, then out on to the balcony and terrace
-          where the stadium and the Dhauladhars take over the frame.
+          Move room to room — living, kitchen, bedroom and balcony — with a closer look at the interior details.
         </p>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_18rem]">

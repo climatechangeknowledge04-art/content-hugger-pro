@@ -7,12 +7,12 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { Scene3D } from "@/components/three/Scene3D";
+import { BuildingReveal } from "@/components/montvue/BuildingReveal";
 import living from "@/assets/interior-living.jpg";
 import kitchen from "@/assets/interior-kitchen.jpg";
 import bedroom from "@/assets/room-bedroom.jpg";
 import balcony from "@/assets/room-balcony-garden.jpg";
-import terrace from "@/assets/story-stadium.jpg";
+import bedroomStorage from "@/assets/montvue-bedroom-storage.jpg.asset.json";
 import backdropAsset from "@/assets/dhauladhar-panorama.jpg.asset.json";
 
 const FLOORS = [
@@ -50,10 +50,10 @@ const ROOMS = [
     alt: "Balcony with planters and a glass railing above the deodar forest",
   },
   {
-    src: terrace,
-    eyebrow: "Step 05 · The Terrace",
-    title: "Insane Views, Every Evening",
-    alt: "HPCA cricket stadium and the Dhauladhar range seen from the terrace",
+    src: bedroomStorage.url,
+    eyebrow: "Step 05 · Interiors",
+    title: "Thoughtful Details",
+    alt: "Bedroom interior with full-height timber wardrobe and frosted glass doors",
   },
 ] as const;
 
@@ -190,7 +190,7 @@ export function FloorExplorer() {
           />
           <div className="absolute inset-0 bg-charcoal-deep/45" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-deep/75 via-transparent to-charcoal-deep/85" />
-          {!inside && <Scene3D name="building" progress={read} />}
+          <BuildingReveal progress={scrollYProgress} />
         </div>
 
         {/* Chapter narration */}
