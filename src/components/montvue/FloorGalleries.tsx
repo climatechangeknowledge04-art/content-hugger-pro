@@ -43,7 +43,7 @@ const GALLERIES = [
 export function FloorGalleries() {
   const [floor, setFloor] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
-  const gallery = GALLERIES[floor];
+  const gallery = GALLERIES[floor] ?? GALLERIES[0];
   const photos = gallery.photos;
   const photo = selected === null ? null : photos[selected];
 
