@@ -1,4 +1,4 @@
-import walkthrough from "@/assets/mont-vue-fullfloor-walk.webm.asset.json";
+import walkthrough from "@/assets/mont-vue-fullfloor-cut.webm.asset.json";
 import poster from "@/assets/mont-vue-fullfloor-walk-poster.jpg.asset.json";
 import { LazyVideo } from "@/components/montvue/LazyVideo";
 
