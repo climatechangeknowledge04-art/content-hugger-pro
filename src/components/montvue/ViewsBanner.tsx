@@ -16,7 +16,7 @@ export function ViewsBanner() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 6, ease: "easeOut" }}
         className="absolute inset-0 h-full w-full object-cover"
-        loading="eager"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-charcoal-deep/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal-deep/70 via-charcoal-deep/20 to-charcoal" />

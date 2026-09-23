@@ -95,7 +95,7 @@ export function Neighbourhood() {
                 <motion.img
                   src={p.src}
                   alt={p.alt}
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   animate={{ scale: isZoom ? 1.55 : 1 }}
                   whileHover={{ scale: isZoom ? 1.55 : 1.07 }}
