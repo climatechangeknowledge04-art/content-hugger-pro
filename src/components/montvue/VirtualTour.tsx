@@ -15,11 +15,11 @@ export function VirtualTour() {
             id="walkthrough-title"
             className="mt-5 max-w-4xl font-display text-4xl font-medium text-sand sm:text-6xl"
           >
-            Enter at the Front Gate. Walk Through Your Home.
+            Enter Through the Main Door. Explore the Home.
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed font-light text-sand/65 sm:text-base">
             A slower, eye-level journey following the shared 3 BHK plan — from the main door through
-            every living space, bedroom, washroom position and mountain-facing balcony.
+            the living spaces, three bedrooms, washroom positions and mountain-facing balconies.
           </p>
         </div>
         <figure className="group relative aspect-video min-h-[22rem] overflow-hidden bg-charcoal-soft shadow-lift sm:min-h-[34rem] lg:min-h-[48rem]">
@@ -46,6 +46,11 @@ export function VirtualTour() {
             aria-label="Cinematic walkthrough from the front gate through the Mont Vue home"
           />
         </figure>
+        <p className="mt-4 text-xs leading-relaxed text-sand/50">
+          Visualisation assembled from supplied footage and reference images. Washroom locations are
+          shown on the floor plan; the repeated bedroom view illustrates the three rooms, not their
+          individual finished interiors.
+        </p>
       </div>
     </section>
   );
